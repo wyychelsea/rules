@@ -1,4 +1,4 @@
-# NAME: Hepsiburada
+# NAME: Turkey-websites
 # AUTHOR: BlueLion
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2024-07-15 23:10:00
@@ -7,3 +7,5 @@
 # TOTAL: 3
 DOMAIN-SUFFIX,hepsiburada.com 
 DOMAIN-KEYWORD,hepsiburada 
+DOMAIN-SUFFIX,buysellvouchers.com 
+DOMAIN-KEYWORD,buysellvouchers 
