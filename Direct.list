@@ -1,14 +1,10 @@
 # NAME: Direct
 # AUTHOR: BlueLion
 # UPDATED: 2026-01-08 00:16:00
-# DOMAIN-SUFFIX: 7
+# DOMAIN-SUFFIX: 3
 # DOMAIN-KEYWORD: 1
-# TOTAL: 8
+# TOTAL: 4
 DOMAIN-SUFFIX,test-ipv6.com 
-DOMAIN-SUFFIX,jable.tv 
-DOMAIN-KEYWORD,jable 
-DOMAIN-SUFFIX,mushroomtrack.com 
-DOMAIN-SUFFIX,alonestreaming.com 
 DOMAIN-SUFFIX,bitwarden.com 
 DOMAIN-SUFFIX,linksys.com 
 DOMAIN-SUFFIX,linksyssmartwifi.com 
