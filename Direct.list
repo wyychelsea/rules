@@ -1,9 +1,10 @@
 # NAME: Direct
 # AUTHOR: BlueLion
 # UPDATED: 2026-01-30 12:49:00
-# DOMAIN-SUFFIX: 2
+# DOMAIN-SUFFIX: 3
 # DOMAIN-KEYWORD: 1
-# TOTAL: 3
+# TOTAL: 4
 DOMAIN-SUFFIX,test-ipv6.com 
+DOMAIN-SUFFIX,bitwarden.com 
 DOMAIN-SUFFIX,linksys.com 
 DOMAIN-SUFFIX,linksyssmartwifi.com 
