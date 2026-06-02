@@ -1,11 +1,13 @@
 # NAME: TR_websites
 # AUTHOR: BlueLion
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-15 23:10:00
-# DOMAIN-SUFFIX: 1
-# DOMAIN-KEYWORD: 1
-# TOTAL: 3
+# UPDATED: 2026-06-02 12:01:00
+# DOMAIN-SUFFIX: 3
+# DOMAIN-KEYWORD: 3
+# TOTAL: 6
 DOMAIN-SUFFIX,hepsiburada.com 
 DOMAIN-KEYWORD,hepsiburada 
+DOMAIN-SUFFIX,oyunfor.com 
+DOMAIN-KEYWORD,oyunfor 
 DOMAIN-SUFFIX,buysellvouchers.com 
 DOMAIN-KEYWORD,buysellvouchers 
