@@ -2,7 +2,8 @@
 # AUTHOR: BlueLion
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2026-06-18 11:30:00
-# DOMAIN-SUFFIX: 1
+# DOMAIN-SUFFIX: 2
 # DOMAIN-KEYWORD: 0
-# TOTAL: 1
+# TOTAL: 2
 DOMAIN-SUFFIX,cdn.99998888.cc 
+DOMAIN-SUFFIX,static.71890322.cc 
