@@ -1,12 +1,13 @@
 # NAME: Direct
 # AUTHOR: BlueLion
-# UPDATED: 2026-05-09 16:45:00
-# DOMAIN-SUFFIX: 3
+# UPDATED: 2026-07-09 16:45:00
+# DOMAIN-SUFFIX: 10
 # DOMAIN-KEYWORD: 0
-# TOTAL: 3
+# TOTAL: 10
 DOMAIN-SUFFIX,test-ipv6.com 
 DOMAIN-SUFFIX,linksys.com 
 DOMAIN-SUFFIX,linksyssmartwifi.com 
+DOMAIN-SUFFIX,ratchada.terminal69.win 
 DOMAIN-SUFFIX,rama991.siamparagon.org 
 DOMAIN-SUFFIX,link01.nobodys.uk 
 DOMAIN-SUFFIX,huaikhwang.central-world.org 
