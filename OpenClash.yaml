@@ -70,65 +70,14 @@ proxy-groups:
   - {name: 🛩机场, type: select, proxies: [🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
   - {name: 🤖OpenAI, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
   - {name: 💻GitHub, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
+  - {name: 📺Chromecast, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
+  - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
+  - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 📌手动]}
 
 
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
 
 
-
-
-
-
-
-
-- name: "\U0001F4FAChromecast"
-  type: select
-  proxies:
-  - "\U0001F680节点选择"
-  - "\U0001F3A5流媒体节点"
-  - "\U0001F1F3\U0001F1EC自建尼日利亚"
-  - "\U0001F1E8\U0001F1F3自建台湾"
-  - "♻️Nano"
-  - "\U0001F1E8\U0001F1F3台湾prpr"
-  - "\U0001F1ED\U0001F1F0香港prpr"
-  - "\U0001F1FA\U0001F1F8美国prpr"
-  - "\U0001F1F8\U0001F1EC狮城prpr"
-  - "\U0001F1EF\U0001F1F5日本prpr"
-  - "\U0001F1E8\U0001F1F3台湾TAG"
-  - "\U0001F1ED\U0001F1F0香港TAG"
-  - "\U0001F1FA\U0001F1F8美国TAG"
-  - "\U0001F1F8\U0001F1EC狮城TAG"
-  - "\U0001F1EF\U0001F1F5日本TAG"
-  - "\U0001F4CC手动"
-- name: "\U0001F4E2谷歌FCM"
-  type: select
-  proxies:
-  - "\U0001F7E2直连"
-  - "\U0001F680节点选择"
-  - "\U0001F1F3\U0001F1EC自建尼日利亚"
-  - "\U0001F1E8\U0001F1F3自建台湾"
-  - "♻️Nano"
-  - "\U0001F1E8\U0001F1F3台湾prpr"
-  - "\U0001F1ED\U0001F1F0香港prpr"
-  - "\U0001F1FA\U0001F1F8美国prpr"
-  - "\U0001F1F8\U0001F1EC狮城prpr"
-  - "\U0001F1EF\U0001F1F5日本prpr"
-  - "\U0001F1E8\U0001F1F3台湾TAG"
-  - "\U0001F1ED\U0001F1F0香港TAG"
-  - "\U0001F1FA\U0001F1F8美国TAG"
-  - "\U0001F1F8\U0001F1EC狮城TAG"
-  - "\U0001F1EF\U0001F1F5日本TAG"
-  - "\U0001F4CC手动"
-- name: "\U0001F4ACGoogleVoice"
-  type: select
-  proxies:
-  - "\U0001F1FA\U0001F1F8美国prpr"
-  - "\U0001F1FA\U0001F1F8美国TAG"
-  - "\U0001F680节点选择"
-  - "\U0001F1F3\U0001F1EC自建尼日利亚"
-  - "\U0001F1E8\U0001F1F3自建台湾"
-  - "♻️Nano"
-  - "\U0001F4CC手动"
 - name: "\U0001F4ACTelegram"
   type: select
   proxies:
