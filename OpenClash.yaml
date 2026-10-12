@@ -135,16 +135,10 @@ proxy-groups:
   - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2\.0|2x|3\.0|3x|4\.0|4x|5\.0|5x|10\.0|10x|20\.0|20x"}
   - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2\.0|2x|3\.0|3x|4\.0|4x|5\.0|5x|10\.0|10x|20\.0|20x"}
 
-
-
-
-
-
-
   
 
-  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+#  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+#  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
 
 
 
@@ -156,10 +150,10 @@ rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
   - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
-  - "DOMAIN-SUFFIX,live.ottiptv.cc,📺IPTV"
-  - "DOMAIN-KEYWORD,www.google.,🔍谷歌搜索"
-  - "DOMAIN-KEYWORD,pa.google,📺Chromecast"
-  - "DOMAIN,lens.l.google.com,💬GoogleVoice"
+  - RULE-SET,IPTV_domain,📺IPTV
+  - RULE-SET,GoogleSearch_domain,🔍谷歌搜索
+  - RULE-SET,Chromecast_domain,📺Chromecast
+  - RULE-SET,GoogleVoice_domain,💬GoogleVoice
   - RULE-SET,WorldCup_domain,⚽️世界杯
   - RULE-SET,PLEX_domain,📺PLEX
   - RULE-SET,Duolingo_domain,🐤多邻国
@@ -222,6 +216,10 @@ rule-anchor:
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 
 rule-providers:
+  IPTV_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.list"}
+  GoogleSearch_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleSearch/GoogleSearch.list"}
+  Chromecast_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Chromecast/Chromecast.list"}
+  GoogleVoice_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.list"}
   WorldCup_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.list"}
   PLEX_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/PLEX.list"}
   Duolingo_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Duolingo.list"}
