@@ -14,7 +14,6 @@ keep-alive-idle: 600
 keep-alive-interval: 15
 profile:
   store-selected: true
-  store-fake-ip: true
 
 external-controller: 0.0.0.0:9090
 secret: ""
@@ -41,18 +40,16 @@ tun:
   enable: true
   stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
   dns-hijack: ["any:53", "tcp://any:53"]
-  auto-route: true
-  auto-redirect: true
-  auto-detect-interface: true
+  auto-route: false
+  auto-redirect: false
+  auto-detect-interface: false
 
 # DNS模块
 dns:
   enable: true
   cache-algorithm: arc
   ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.0/16
-  fake-ip-filter-mode: blacklist
+  enhanced-mode: redir-host
   fake-ip-filter:
     - "*"
     - "+.lan"
