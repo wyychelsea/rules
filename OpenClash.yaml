@@ -68,7 +68,7 @@ dns:
 proxy-groups:
   - {name: 🚀节点选择, type: select, proxies: [🇨🇳自建台湾, DIRECT]}
   - {name: 🐟漏网之鱼, type: select, proxies: [🚀节点选择, DIRECT, 🇨🇳自建台湾]}
-
+  - {name: 🇨🇳自建台湾, type: select, include-all: true, filter: "自建台湾"}
 
 # 规则匹配
 rules:
