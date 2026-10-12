@@ -1,0 +1,16 @@
+# NAME: WorldCup
+# AUTHOR: BlueLion
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2026-07-06 11:30:00
+# DOMAIN-SUFFIX: 6
+# DOMAIN-KEYWORD: 0
+# TOTAL: 6
+
+payload:
+  - DOMAIN-SUFFIX,cdn.99998888.cc
+  - DOMAIN-SUFFIX,static.71890322.cc
+  - DOMAIN-SUFFIX,svipsvip.ffzyread1.com
+  - DOMAIN-SUFFIX,sharewithyou.dpdns.org
+  - DOMAIN-SUFFIX,kan.waiguotai.top
+  - DOMAIN-SUFFIX,picture.shenniaokongque.top
+  - DOMAIN-SUFFIX,cdn.staticres.top
