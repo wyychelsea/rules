@@ -209,7 +209,7 @@ rules:
   - RULE-SET,telegram_ip,💬Telegram
   - RULE-SET,netflix_ip,🎥Netflix
   - RULE-SET,cn_ip,DIRECT
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🐟漏网之鱼
   
 
 # 规则集
