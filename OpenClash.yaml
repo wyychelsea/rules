@@ -1,13 +1,63 @@
-port: 7890
-socks-port: 7891
+# 全局配置 
+mixed-port: 7890
 allow-lan: true
 bind-address: "*"
 ipv6: false
 unified-delay: true
 tcp-concurrent: true
-mode: rule
 log-level: info
+keep-alive-idle: 600
+keep-alive-interval: 15
+profile:
+  store-selected: true
+
 external-controller: 0.0.0.0:9090
+secret: "123456"
+external-ui: ui
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+        - 443
+    TLS:
+      ports:
+        - 443
+        - 8443
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+  force-domain:
+    - "+.netflix.com"
+    - "+.nflxvideo.net"
+    - "+.amazonaws.com"
+    - "+.media.dssott.com"
+  skip-domain:
+    - "+.apple.com"
+    - Mijia Cloud
+    - dlg.io.mi.com
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    - "+.push.apple.com"
+  
+# 入站
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+    - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
 
 dns:
   enable: true
@@ -15,50 +65,46 @@ dns:
   listen: 0.0.0.0:7874
   use-hosts: true
   fake-ip-filter:
-  - "*.lan"
-  - "*.local"
-  - "*.arpa"
-  - time.*.com
-  - ntp.*.com
-  - "+.market.xiaomi.com"
-  - localhost.ptlogin2.qq.com
-  - "*.msftncsi.com"
-  - www.msftconnecttest.com
+    - "*.lan"
+    - "*.local"
+    - "*.arpa"
+    - time.*.com
+    - ntp.*.com
+    - "+.market.xiaomi.com"
+    - localhost.ptlogin2.qq.com
+    - "*.msftncsi.com"
+    - www.msftconnecttest.com
   default-nameserver:
-  - 119.29.29.29
-  - 223.5.5.5
-  - 180.184.1.1
-  nameserver:
-  - dhcp://"pppoe-wan"
-  - 116.147.68.1
-  - 221.6.4.66
-  - 58.240.57.33
-  - 119.29.29.29
-  - 223.5.5.5
-  - 180.184.1.1
-  nameserver-policy:
-    geosite:cn:
     - 119.29.29.29
     - 223.5.5.5
+    - 180.184.1.1
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 180.184.1.1
+  nameserver-policy:
+    geosite:cn:
+      - 119.29.29.29
+      - 223.5.5.5
     geosite:geolocation-!cn:
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
+      - tls://1.0.0.1:853
+      - tls://dns.google:853
   proxy-server-nameserver:
-  - 119.29.29.29
-  - 223.5.5.5
+    - 119.29.29.29
+    - 223.5.5.5
   fallback:
-  - 1.1.1.1
-  - 8.8.8.8
+    - 1.1.1.1
+    - 8.8.8.8
   fallback-filter:
     geoip: true
     geoip-code: CN
     geosite:
-    - gfw
+      - gfw
     ipcidr:
-    - 240.0.0.0/4
+      - 240.0.0.0/4
   enhanced-mode: redir-host
   respect-rules: true
-proxies: []
+
 
 proxy-groups:
   - {name: 🚀节点选择, type: select, proxies: [🔯故障转移, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽, 💸高倍, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, 📌手动, DIRECT]}
@@ -278,64 +324,3 @@ rule-providers:
   netflix_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/netflix.mrs"}
   cn_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"}
   private_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"}
-
-
-
-
-
-  
-
-redir-port: 7892
-tproxy-port: 7895
-mixed-port: 7893
-secret: '123456'
-external-ui: "/usr/share/openclash/ui"
-external-ui-name: metacubexd
-keep-alive-interval: 15
-keep-alive-idle: 600
-geodata-mode: true
-tcp-concurrent: true
-unified-delay: true
-sniffer:
-  enable: true
-  override-destination: true
-  sniff:
-    QUIC:
-      ports:
-      - 443
-    TLS:
-      ports:
-      - 443
-      - 8443
-    HTTP:
-      ports:
-      - 80
-      - 8080-8880
-      override-destination: true
-  force-domain:
-  - "+.netflix.com"
-  - "+.nflxvideo.net"
-  - "+.amazonaws.com"
-  - "+.media.dssott.com"
-  skip-domain:
-  - "+.apple.com"
-  - Mijia Cloud
-  - dlg.io.mi.com
-  - "+.oray.com"
-  - "+.sunlogin.net"
-  - "+.push.apple.com"
-  force-dns-mapping: true
-  parse-pure-ip: true
-tun:
-  enable: true
-  stack: system
-  device: utun
-  dns-hijack:
-  - 127.0.0.1:53
-  endpoint-independent-nat: true
-  auto-route: false
-  auto-detect-interface: false
-  auto-redirect: false
-  strict-route: false
-profile:
-  store-selected: true
