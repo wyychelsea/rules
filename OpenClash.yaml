@@ -1,3 +1,7 @@
+# 必读！！！
+# 此配置为覆写配置模板，不含节点以及订阅配置，不知道用途的不要用。
+# 机场订阅
+
 # 全局配置 
 mixed-port: 7890
 allow-lan: true
@@ -10,9 +14,10 @@ keep-alive-idle: 600
 keep-alive-interval: 15
 profile:
   store-selected: true
+  store-fake-ip: true
 
 external-controller: 0.0.0.0:9090
-secret: "123456"
+secret: ""
 external-ui: ui
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
@@ -30,61 +35,34 @@ sniffer:
   skip-domain:
     - "Mijia Cloud"
     - "+.push.apple.com"
+
 # 入站
 tun:
   enable: true
   stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
   dns-hijack: ["any:53", "tcp://any:53"]
-  auto-route: false
-  auto-redirect: false
-  auto-detect-interface: false
-  
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
 # DNS模块
 dns:
   enable: true
+  cache-algorithm: arc
   ipv6: false
-  listen: 0.0.0.0:7874
-  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.0/16
+  fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "*.lan"
-    - "*.local"
-    - "*.arpa"
-    - time.*.com
-    - ntp.*.com
+    - "*"
+    - "+.lan"
+    - "+.local"
     - "+.market.xiaomi.com"
-    - localhost.ptlogin2.qq.com
-    - "*.msftncsi.com"
-    - www.msftconnecttest.com
   default-nameserver:
-    - 119.29.29.29
     - 223.5.5.5
-    - 180.184.1.1
   nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 180.184.1.1
-  nameserver-policy:
-    geosite:cn:
-      - 119.29.29.29
-      - 223.5.5.5
-    geosite:geolocation-!cn:
-      - tls://1.0.0.1:853
-      - tls://dns.google:853
-  proxy-server-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  fallback:
-    - 1.1.1.1
-    - 8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    geosite:
-      - gfw
-    ipcidr:
-      - 240.0.0.0/4
-  enhanced-mode: redir-host
-  respect-rules: true
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
 # 出站策略
 proxy-groups:
