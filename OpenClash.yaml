@@ -112,27 +112,6 @@ rule-anchor:
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 
 rule-providers:
-  IPTV_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.list"}
-  GoogleSearch_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleSearch/GoogleSearch.list"}
-  Chromecast_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Chromecast/Chromecast.list"}
-  GoogleVoice_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.list"}
-  WorldCup_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.list"}
-  PLEX_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/PLEX.list"}
-  Duolingo_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Duolingo.list"}
-  Nigeria_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/NG_websites.list"}
-  Deezer_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Deezer/Deezer.list"}
-  Fountain_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.list"}
-  TIDAL_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.list"}
-  Turkey_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/TR_websites.list"}
-  Speedtest_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.list"}
-  Airport_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.list"}
-  RemoteDesktop_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/RemoteDesktop/RemoteDesktop.list"}
-  WeChat_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.list"}
-  Qobuz_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.list"}
-  Download_domain: {<<: *domain_text, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.list"}
-
-
-
   Bahamut_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bahamut.mrs"}
   AppleTV_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-tvplus.mrs"}
   Bing_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bing.mrs"}
