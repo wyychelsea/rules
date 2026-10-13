@@ -117,7 +117,7 @@ proxy-groups:
   - {name: 🐟漏网之鱼, type: select, proxies: [🚀节点选择, DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
   - {name: 🇳🇬自建尼日利亚, type: select, include-all: true, filter: "自建尼日利亚"}
   - {name: 🇨🇳自建台湾, type: select, include-all: true, filter: "自建台湾"}
-  - {name: 🏠家宽, type: select, include-all: true, filter: "自建|家宽|家庭|住宅|游戏|星链|蜂窝"}
+  - {name: 🏠家宽, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝"}
   - {name: 💸高倍, type: select, include-all: true, filter: "倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝"}
   - {name: 🎥Netflix节点, type: select, include-all: true, filter: "奈飞|解锁|Netflix|NETFLIX|Media"}
   - {name: ♻️Nano, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "Nano"}
