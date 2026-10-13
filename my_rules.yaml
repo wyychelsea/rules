@@ -103,7 +103,7 @@ rules:
 #  - RULE-SET,apple_ip,🍎苹果服务
 #  - RULE-SET,telegram_ip,💬Telegram
 #  - RULE-SET,netflix_ip,🎥Netflix
-#  - RULE-SET,cn!_domain,🌍国外
+  - RULE-SET,cn!_domain,🚀默认代理
 #  - RULE-SET,cn_domain,🌏国内
   - RULE-SET,cn_ip,DIRECT
   - MATCH,🐟漏网之鱼
