@@ -133,9 +133,6 @@ dns:
 
 # 规则匹配
 rules:
-  - "SRC-IP-CIDR,192.168.2.180/32,🇨🇳自建台湾"
-  - "SRC-IP-CIDR,192.168.2.224/32,🇨🇳自建台湾"
-  - "SRC-IP-CIDR,192.168.2.154/32,🇯🇵日本prpr"
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
   - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
