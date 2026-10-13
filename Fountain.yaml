@@ -6,6 +6,7 @@
 # DOMAIN-KEYWORD: 1
 # TOTAL: 4
 payload:
-  - +.jable.tv
-  - +.mushroomtrack.com
-  - +.alonestreaming.com
+  - DOMAIN-SUFFIX,jable.tv
+  - DOMAIN-KEYWORD,jable
+  - DOMAIN-SUFFIX,mushroomtrack.com
+  - DOMAIN-SUFFIX,alonestreaming.com
