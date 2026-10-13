@@ -5,6 +5,9 @@
 # TOTAL: 3
 
 payload:
-  - +.hepsiburada.com
-  - +.oyunfor.com
-  - +.buysellvouchers.com
+  - DOMAIN-SUFFIX,hepsiburada.com
+  - DOMAIN-KEYWORD,hepsiburada
+  - DOMAIN-SUFFIX,oyunfor.com
+  - DOMAIN-KEYWORD,oyunfor
+  - DOMAIN-SUFFIX,buysellvouchers.com
+  - DOMAIN-KEYWORD,buysellvouchers
