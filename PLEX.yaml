@@ -7,5 +7,4 @@
 # TOTAL: 2
 
 payload:
-  - DOMAIN-SUFFIX,app.plex.tv
-  - DOMAIN-SUFFIX,plex.tv
+  - +.plex.tv
