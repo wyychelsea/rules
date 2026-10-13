@@ -185,7 +185,7 @@ rules:
   - RULE-SET,YouTube_domain,📹YouTube
   - RULE-SET,Amazon_domain,🛒Amazon
   - RULE-SET,PayPal_domain,💰PayPal
-  - RULE-SET,CN_domain,🌏国内媒体
+  - RULE-SET,cn_domain,🌏国内媒体
   - RULE-SET,SteamCN_domain,DIRECT
   - RULE-SET,Steam_domain,🎮Steam
   - RULE-SET,MicrosoftCN_domain,DIRECT
@@ -194,7 +194,7 @@ rules:
   - RULE-SET,Netflix_domain,🎥Netflix
   - RULE-SET,AppleCN_domain,DIRECT
   - RULE-SET,Apple_domain,🍎苹果服务
-  - RULE-SET,CN!_domain,🌍国外媒体
+  - RULE-SET,cn!_domain,🌍国外媒体
   - RULE-SET,google_ip,🔴🟡🔵🟢谷歌
   - RULE-SET,apple_ip,🍎苹果服务
   - RULE-SET,telegram_ip,💬Telegram
