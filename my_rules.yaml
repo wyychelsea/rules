@@ -68,7 +68,7 @@ dns:
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [🇨🇳台湾prpr, DIRECT]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, DIRECT]}
-  - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 📌手动, type: select, include-all: true}
   - {name: 🇨🇳台湾prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇨🇳台湾TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇭🇰香港prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(HK|Hong.*?Kong|懒人|香港|港|深港|沪港|呼港|HKT|HKBN|HGC|WTT|CMI|京港)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
@@ -79,12 +79,12 @@ proxy-groups:
   - {name: 🇸🇬狮城TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(新加坡|新|坡|狮城|SG|Singapore)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇯🇵日本prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇯🇵日本TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇮🇳印度, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(印度|India|\bIN\b|\bIND\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇹🇷土耳其, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇮🇳印度, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(印度|India|\bIN\b|\bIND\b)"}
+  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)"}
+  - {name: 🇹🇷土耳其, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)"}
+  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)"}
+  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)"}
+  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)"}
 
 
 # 规则匹配
