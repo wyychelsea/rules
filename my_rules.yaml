@@ -34,7 +34,7 @@ dns:
   enable: true
   cache-algorithm: arc
   ipv6: false
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.0/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
@@ -100,8 +100,6 @@ rules:
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 Wallet
   - RULE-SET,binance_domain,💶 Wallet
-  - RULE-SET,okx_domain,💶 Wallet
-  - RULE-SET,usd_domain,💶 Wallet
   - RULE-SET,steamcn_domain,DIRECT
   - RULE-SET,steam_domain,🎮 Steam
   - RULE-SET,cn!_domain,🚀 默认代理
