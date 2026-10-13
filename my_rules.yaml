@@ -170,7 +170,7 @@ rules:
   - RULE-SET,WeChat_classical,💬WeChat
   - RULE-SET,github_domain,💻GitHub
   - RULE-SET,Qobuz_classical,🎵Qobuz
-#  - RULE-SET,Download_classical,DIRECT
+  - RULE-SET,Download_classical,DIRECT
   - RULE-SET,openai_domain,🤖OpenAI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
   - RULE-SET,ebay_domain,🛒eBay
