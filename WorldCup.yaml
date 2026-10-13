@@ -7,10 +7,10 @@
 # TOTAL: 6
 
 payload:
-  - DOMAIN-SUFFIX,cdn.99998888.cc
-  - DOMAIN-SUFFIX,static.71890322.cc
-  - DOMAIN-SUFFIX,svipsvip.ffzyread1.com
-  - DOMAIN-SUFFIX,sharewithyou.dpdns.org
-  - DOMAIN-SUFFIX,kan.waiguotai.top
-  - DOMAIN-SUFFIX,picture.shenniaokongque.top
-  - DOMAIN-SUFFIX,cdn.staticres.top
+  - +.cdn.99998888.cc
+  - +.static.71890322.cc
+  - +.svipsvip.ffzyread1.com
+  - +.sharewithyou.dpdns.org
+  - +.kan.waiguotai.top
+  - +.picture.shenniaokongque.top
+  - +.cdn.staticres.top
