@@ -5,7 +5,7 @@
 # DOMAIN-SUFFIX: 3
 # DOMAIN-KEYWORD: 1
 # TOTAL: 4
-DOMAIN-SUFFIX,jable.tv 
-DOMAIN-KEYWORD,jable 
-DOMAIN-SUFFIX,mushroomtrack.com 
-DOMAIN-SUFFIX,alonestreaming.com 
+payload:
+  - +.jable.tv
+  - +.mushroomtrack.com
+  - +.alonestreaming.com
