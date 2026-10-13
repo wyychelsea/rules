@@ -1,123 +1,124 @@
----
-port: 7890
-socks-port: 7891
+# 必读！！！
+# 此配置为覆写配置模板，不含节点以及订阅配置，不知道用途的不要用。
+# 机场订阅
+
+# 全局配置 
+mixed-port: 7890
 allow-lan: true
 bind-address: "*"
 ipv6: false
 unified-delay: true
 tcp-concurrent: true
-mode: rule
 log-level: info
-external-controller: 0.0.0.0:9090
+keep-alive-idle: 600
+keep-alive-interval: 15
+profile:
+  store-selected: true
+  store-fake-ip: true
 
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: ui
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
+
+# 入站
+tun:
+  enable: true
+  stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
 dns:
   enable: true
+  cache-algorithm: arc
   ipv6: false
-  listen: 0.0.0.0:7874
-  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.0/16
+  fake-ip-filter-mode: blacklist
   fake-ip-filter:
-  - "*.lan"
-  - "*.local"
-  - "*.arpa"
-  - time.*.com
-  - ntp.*.com
-  - "+.market.xiaomi.com"
-  - localhost.ptlogin2.qq.com
-  - "*.msftncsi.com"
-  - www.msftconnecttest.com
+    - "*"
+    - "+.lan"
+    - "+.local"
+    - "+.market.xiaomi.com"
   default-nameserver:
-  - 119.29.29.29
-  - 223.5.5.5
-  - 180.184.1.1
-  nameserver:
-  - dhcp://"pppoe-wan"
-  - 116.147.68.1
-  - 221.6.4.66
-  - 58.240.57.33
-  - 119.29.29.29
-  - 223.5.5.5
-  - 180.184.1.1
-  nameserver-policy:
-    geosite:cn:
-    - 119.29.29.29
     - 223.5.5.5
-    geosite:geolocation-!cn:
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
-  proxy-server-nameserver:
-  - 119.29.29.29
-  - 223.5.5.5
-  fallback:
-  - 1.1.1.1
-  - 8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    geosite:
-    - gfw
-    ipcidr:
-    - 240.0.0.0/4
-  enhanced-mode: redir-host
-  respect-rules: true
-proxies: []
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
+# 出站策略 
 proxy-groups:
-  - {name: 🚀节点选择, type: select, proxies: [🔯故障转移, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽, 💸高倍, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, 📌手动, DIRECT]}
-  - {name: 🎵Spotify, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡, 📌手动]}
-  - {name: 📹YouTube, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡, 📌手动]}
-  - {name: 🐭Twitch, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🎥流媒体节点, type: select, proxies: [🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, 📌手动, DIRECT]}
-  - {name: 🔴🟡🔵🟢谷歌, type: select, proxies: [🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
+  - {name: 🚀默认代理, type: select, proxies: [🔯故障转移, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, DIRECT]}
+  - {name: 🎵Spotify, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
+  - {name: 📹YouTube, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
+  - {name: 🐭Twitch, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎥流媒体节点, type: select, proxies: [🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, DIRECT]}
+  - {name: 🔴🟡🔵🟢谷歌, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🔍谷歌搜索, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🛩机场, type: select, proxies: [🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🤖OpenAI, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 💻GitHub, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 📺Chromecast, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 📌手动]}
-  - {name: 💬Telegram, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 💬WhatsApp, type: select, proxies: [🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🎵TIDAL, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀节点选择, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
-  - {name: 🎵Qobuz, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀节点选择, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
-  - {name: 🎵Deezer, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀节点选择, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
-  - {name: 🎥Netflix, type: select, proxies: [🎥Netflix节点, 🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🐹Disney+, type: select, proxies: [🎥Netflix节点, 🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🍎AppleTV, type: select, proxies: [🎥Netflix节点, 🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🎦HBO, type: select, proxies: [🎥Netflix节点, 🚀节点选择, 🎥流媒体节点, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🇦🇷阿根廷, 📌手动]}
+  - {name: 🔍谷歌搜索, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🛩机场, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🤖OpenAI, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 💻GitHub, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 📺Chromecast, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 📌手动]}
+  - {name: 💬Telegram, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 💬WhatsApp, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎵TIDAL, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 🎵Qobuz, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 🎵Deezer, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 🎥Netflix, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🐹Disney+, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🍎AppleTV, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎦HBO, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
   - {name: 📺巴哈姆特, type: select, proxies: [🇨🇳台湾prpr, 🇨🇳台湾TAG]}
-  - {name: 🐤多邻国, type: select, proxies: [🚀节点选择, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, DIRECT]}
-  - {name: 🇹🇷土耳其网站, type: select, proxies: [🇹🇷土耳其, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🇳🇬尼日利亚网站, type: select, proxies: [🇳🇬尼日利亚, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🛒Amazon, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀节点选择]}
-  - {name: 🛒Bestbuy, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀节点选择]}
-  - {name: 🛒eBay, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀节点选择]}
+  - {name: 🐤多邻国, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🇹🇷土耳其网站, type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🇳🇬尼日利亚网站, type: select, proxies: [🇳🇬尼日利亚, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🛒Amazon, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀默认代理]}
+  - {name: 🛒Bestbuy, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
+  - {name: 🛒eBay, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
   - {name: 💰PayPal, type: select, proxies: [DIRECT]}
-  - {name: 💰Binance, type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀节点选择]}
-  - {name: 🚀Speedtest, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 💬WeChat, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
+  - {name: 💰Binance, type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀默认代理]}
+  - {name: 🚀Speedtest, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 💬WeChat, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📺IPTV, type: select, proxies: [DIRECT]}
-  - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀节点选择]}
+  - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 📺PLEX, type: select, proxies: [DIRECT]}
   - {name: 🖥️远程连接, type: select, proxies: [DIRECT]}
-  - {name: ⚽️世界杯, type: select, proxies: [DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: ⛲喷泉, type: select, proxies: [🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🌍国外媒体, type: select, proxies: [🚀节点选择, DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🌏国内媒体, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: Ⓜ️微软Bing, type: select, proxies: [🚀节点选择, DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: Ⓜ️OneDrive, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: Ⓜ️微软服务, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🍎苹果服务, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🎮任天堂, type: select, proxies: [DIRECT, 🚀节点选择, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🏠家宽, 🇯🇵日本prpr, 🇯🇵日本TAG, 💸高倍, 📌手动]}
-  - {name: 🎮Steam, type: select, proxies: [🚀节点选择, DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🐟漏网之鱼, type: select, proxies: [🚀节点选择, DIRECT, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 📌手动]}
-  - {name: 🇳🇬自建尼日利亚, type: select, include-all: true, filter: "自建尼日利亚"}
+  - {name: ⚽️世界杯, type: select, proxies: [DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: ⛲喷泉, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: Ⓜ️微软Bing, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: Ⓜ️OneDrive, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: Ⓜ️微软服务, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🍎苹果服务, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎮任天堂, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇯🇵日本prpr, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎮Steam, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🐟漏网之鱼, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚"}
   - {name: 🇨🇳自建台湾, type: select, include-all: true, filter: "自建台湾"}
-  - {name: 🏠家宽, type: select, include-all: true, filter: "自建|家宽|家庭|住宅|游戏|星链|蜂窝"}
-  - {name: 💸高倍, type: select, include-all: true, filter: "倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝"}
+  - {name: 🏠家宽高倍, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🎥Netflix节点, type: select, include-all: true, filter: "奈飞|解锁|Netflix|NETFLIX|Media"}
   - {name: ♻️Nano, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "Nano"}
-  - {name: 🔯故障转移, type: select, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🔯故障转移, type: select, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇨🇳台湾prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇨🇳台湾TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇭🇰香港prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(HK|Hong.*?Kong|懒人|香港|港|深港|沪港|呼港|HKT|HKBN|HGC|WTT|CMI|京港)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
@@ -126,78 +127,75 @@ proxy-groups:
   - {name: 🇺🇸美国TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇸🇬狮城prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(新加坡|新|坡|狮城|SG|Singapore)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇸🇬狮城TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(新加坡|新|坡|狮城|SG|Singapore)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇯🇵日本prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|(?<![今明近假生])", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇯🇵日本TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|(?<![今明近假生])", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇮🇳印度, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(印度|India|\bIN\b|\bIND\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇹🇷土耳其, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-
+  - {name: 🇯🇵日本prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇯🇵日本TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇮🇳印度, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(印度|India|\bIN\b|\bIND\b)"}
+  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)"}
+  - {name: 🇹🇷土耳其, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)"}
+  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)"}
+  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)"}
+  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建"}
 
 # 规则匹配
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
   - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
-  - RULE-SET,IPTV_domain,📺IPTV
-  - RULE-SET,GoogleSearch_domain,🔍谷歌搜索
-  - RULE-SET,Chromecast_domain,📺Chromecast
-  - RULE-SET,GoogleVoice_domain,💬GoogleVoice
-  - RULE-SET,WorldCup_domain,⚽️世界杯
-  - RULE-SET,PLEX_domain,📺PLEX
-  - RULE-SET,Duolingo_domain,🐤多邻国
-  - RULE-SET,Nigeria_domain,🇳🇬尼日利亚网站
-  - RULE-SET,Deezer_domain,🎵Deezer
-  - RULE-SET,Fountain_domain,⛲喷泉
-  - RULE-SET,TIDAL_domain,🎵TIDAL
-  - RULE-SET,Turkey_domain,🇹🇷土耳其网站
-  - RULE-SET,Speedtest_domain,🚀Speedtest
-  - RULE-SET,Airport_domain,🛩机场
-  - RULE-SET,Bahamut_domain,📺巴哈姆特
-  - RULE-SET,AppleTV_domain,🍎AppleTV
-  - RULE-SET,Bing_domain,Ⓜ️微软Bing
-  - RULE-SET,RemoteDesktop_domain,🖥️远程连接
-  - RULE-SET,Binance_domain,💰Binance
-  - RULE-SET,SteamCN_domain,DIRECT
-  - RULE-SET,WhatsApp_domain,💬WhatsApp
-  - RULE-SET,OneDrive_domain,Ⓜ️OneDrive
-  - RULE-SET,Synology_domain,🗄群晖
-  - RULE-SET,Twitch_domain,🐭Twitch
-  - RULE-SET,Spotify_domain,🎵Spotify
-  - RULE-SET,WeChat_domain,💬WeChat
-  - RULE-SET,GitHub_domain,💻GitHub
-  - RULE-SET,Qobuz_domain,🎵Qobuz
-  - RULE-SET,Download_domain,DIRECT
-  - RULE-SET,OpenAI_domain,🤖OpenAI
-  - RULE-SET,GoogleFCM_domain,📢谷歌FCM
-  - RULE-SET,eBay_domain,🛒eBay
-  - RULE-SET,Telegram_domain,💬Telegram
-  - RULE-SET,HBO_domain,🎦HBO
-  - RULE-SET,Bestbuy_domain,🛒Bestbuy
-  - RULE-SET,Nintendo_domain,🎮任天堂
-  - RULE-SET,Disney_domain,🐹Disney+
-  - RULE-SET,YouTube_domain,📹YouTube
-  - RULE-SET,Amazon_domain,🛒Amazon
-  - RULE-SET,PayPal_domain,💰PayPal
-  - RULE-SET,CN_domain,🌏国内媒体
-  - RULE-SET,SteamCN_domain,DIRECT
-  - RULE-SET,Steam_domain,🎮Steam
-  - RULE-SET,MicrosoftCN_domain,DIRECT
-  - RULE-SET,Microsoft_domain,Ⓜ️微软服务
-  - RULE-SET,Google_domain,🔴🟡🔵🟢谷歌
-  - RULE-SET,Netflix_domain,🎥Netflix
-  - RULE-SET,AppleCN_domain,DIRECT
-  - RULE-SET,Apple_domain,🍎苹果服务
-  - RULE-SET,CN!_domain,🌍国外媒体
+  - RULE-SET,IPTV_classical,📺IPTV
+  - RULE-SET,GoogleSearch_classical,🔍谷歌搜索
+  - RULE-SET,Chromecast_classical,📺Chromecast
+  - RULE-SET,GoogleVoice_classical,💬GoogleVoice
+  - RULE-SET,WorldCup_classical,⚽️世界杯
+  - RULE-SET,PLEX_classical,📺PLEX
+  - RULE-SET,Duolingo_classical,🐤多邻国
+  - RULE-SET,Nigeria_classical,🇳🇬尼日利亚网站
+  - RULE-SET,Deezer_classical,🎵Deezer
+  - RULE-SET,Fountain_classical,⛲喷泉
+  - RULE-SET,TIDAL_classical,🎵TIDAL
+  - RULE-SET,Turkey_classical,🇹🇷土耳其网站
+  - RULE-SET,Speedtest_classical,🚀Speedtest
+  - RULE-SET,Airport_classical,🛩机场
+  - RULE-SET,bahamut_domain,📺巴哈姆特
+  - RULE-SET,apple-tvplus_domain,🍎AppleTV
+  - RULE-SET,bing_domain,Ⓜ️微软Bing
+  - RULE-SET,RemoteDesktop_classical,🖥️远程连接
+  - RULE-SET,binance_domain,💰Binance
+  - RULE-SET,whatsapp_domain,💬WhatsApp
+  - RULE-SET,onedrive_domain,Ⓜ️OneDrive
+  - RULE-SET,synology_domain,🗄群晖
+  - RULE-SET,twitch_domain,🐭Twitch
+  - RULE-SET,spotify_domain,🎵Spotify
+  - RULE-SET,WeChat_classical,💬WeChat
+  - RULE-SET,github_domain,💻GitHub
+  - RULE-SET,Qobuz_classical,🎵Qobuz
+  - RULE-SET,Download_classical,DIRECT
+  - RULE-SET,openai_domain,🤖OpenAI
+  - RULE-SET,googlefcm_domain,📢谷歌FCM
+  - RULE-SET,ebay_domain,🛒eBay
+  - RULE-SET,telegram_domain,💬Telegram
+  - RULE-SET,hbo_domain,🎦HBO
+  - RULE-SET,bestbuy_domain,🛒Bestbuy
+  - RULE-SET,nintendo_domain,🎮任天堂
+  - RULE-SET,disney_domain,🐹Disney+
+  - RULE-SET,youtube_domain,📹YouTube
+  - RULE-SET,amazon_domain,🛒Amazon
+  - RULE-SET,paypal_domain,💰PayPal
+  - RULE-SET,steam@cn_domain,DIRECT
+  - RULE-SET,steam_domain,🎮Steam
+  - RULE-SET,microsoft@cn_domain,DIRECT
+  - RULE-SET,microsoft_domain,Ⓜ️微软服务
+  - RULE-SET,google_domain,🔴🟡🔵🟢谷歌
+  - RULE-SET,netflix_domain,🎥Netflix
+  - RULE-SET,apple@cn_domain,DIRECT
+  - RULE-SET,apple_domain,🍎苹果服务
   - RULE-SET,google_ip,🔴🟡🔵🟢谷歌
   - RULE-SET,apple_ip,🍎苹果服务
   - RULE-SET,telegram_ip,💬Telegram
   - RULE-SET,netflix_ip,🎥Netflix
+  - RULE-SET,cn!_domain,🚀默认代理
+  - RULE-SET,cn_domain,DIRECT
   - RULE-SET,cn_ip,DIRECT
   - MATCH,🐟漏网之鱼
-  
 
 # 规则集
 ## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
@@ -205,130 +203,70 @@ rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
-  classical_yaml: &classical_yaml {type: http, interval: 86400, behavior: classical, format: yaml}
+  classical: &classical {type: http, interval: 86400, behavior: classical, format: yaml}
 
 rule-providers:
-  IPTV_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
-  GoogleSearch_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleSearch/GoogleSearch.yaml"}
-  Chromecast_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Chromecast/Chromecast.yaml"}
-  GoogleVoice_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
-  WorldCup_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.yaml"}
-  PLEX_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/PLEX.yaml"}
-  Duolingo_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Duolingo.yaml"}
-  Nigeria_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
-  Deezer_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Deezer/Deezer.yaml"}
-  Fountain_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
-  TIDAL_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.yaml"}
-  Turkey_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
-  Speedtest_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.yaml"}
-  Airport_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
-  RemoteDesktop_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/RemoteDesktop/RemoteDesktop.yaml"}
-  WeChat_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
-  Qobuz_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
-  Download_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.yaml"}
-
-
-
-
-  Bahamut_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bahamut.mrs"}
-  AppleTV_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-tvplus.mrs"}
-  Bing_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bing.mrs"}
-  Binance_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"}
-  WhatsApp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs"}
-  OneDrive_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/onedrive.mrs"}
-  Synology_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/synology.mrs"}
-  Twitch_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"}
-  Spotify_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs"}
-  GitHub_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
-  OpenAI_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
-  GoogleFCM_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"}
-  eBay_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ebay.mrs"}
-  Telegram_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}
-  HBO_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs"}
-  Bestbuy_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bestbuy.mrs"}
-  Nintendo_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo.mrs"}
-  Disney_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney.mrs"}
-  YouTube_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}
-  Amazon_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/amazon.mrs"}
-  PayPal_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/paypal.mrs"}
-  SteamCN_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
-  Steam_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
-  MicrosoftCN_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
-  Microsoft_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"}
-  Google_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}
-  Netflix_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/netflix.mrs"}
-  AppleCN_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
-  Apple_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs"}
-
-
-
+  fakeipfilter_cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-cn.list"}
+  fakeipfilter_!cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-!cn.list"}
   private_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
-  CN!_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
-  CN_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
+  cn!_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
+
+
+  IPTV_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
+  GoogleSearch_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleSearch/GoogleSearch.yaml"}
+  Chromecast_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Chromecast/Chromecast.yaml"}
+  GoogleVoice_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
+  WorldCup_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.yaml"}
+  PLEX_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/PLEX.yaml"}
+  Duolingo_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Duolingo/Duolingo.yaml"}
+  Nigeria_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
+  Deezer_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Deezer/Deezer.yaml"}
+  Fountain_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
+  TIDAL_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.yaml"}
+  Turkey_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
+  Speedtest_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.yaml"}
+  Airport_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
+  RemoteDesktop_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/RemoteDesktop/RemoteDesktop.yaml"}
+  WeChat_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
+  Qobuz_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
+  Download_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.yaml"}
+
+
+  bahamut_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bahamut.mrs"}
+  apple-tvplus_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple-tvplus.mrs"}
+  bing_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bing.mrs"}
+  binance_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"}
+  whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs"}
+  onedrive_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/onedrive.mrs"}
+  synology_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/synology.mrs"}
+  twitch_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"}  
+  spotify_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs"}
+  github_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
+  openai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
+  googlefcm_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"}
+  ebay_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ebay.mrs"}
+  telegram_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}
+  hbo_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs"}
+  bestbuy_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bestbuy.mrs"}
+  nintendo_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo.mrs"}
+  disney_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/disney.mrs"}
+  youtube_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}
+  amazon_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/amazon.mrs"}
+  paypal_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/paypal.mrs"}
+  steam@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
+  steam_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
+  microsoft@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
+  microsoft_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"}
+  google_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}
+  netflix_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/netflix.mrs"}
+  apple@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
+  apple_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs"}
+
+  
   google_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
   apple_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo-lite/geoip/apple.mrs"}
   telegram_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/telegram.mrs"}
   netflix_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/netflix.mrs"}
   cn_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"}
   private_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"}
-
-
-
-
-
-  
-
-redir-port: 7892
-tproxy-port: 7895
-mixed-port: 7893
-secret: '123456'
-external-ui: "/usr/share/openclash/ui"
-external-ui-name: metacubexd
-keep-alive-interval: 15
-keep-alive-idle: 600
-geodata-mode: true
-tcp-concurrent: true
-unified-delay: true
-sniffer:
-  enable: true
-  override-destination: true
-  sniff:
-    QUIC:
-      ports:
-      - 443
-    TLS:
-      ports:
-      - 443
-      - 8443
-    HTTP:
-      ports:
-      - 80
-      - 8080-8880
-      override-destination: true
-  force-domain:
-  - "+.netflix.com"
-  - "+.nflxvideo.net"
-  - "+.amazonaws.com"
-  - "+.media.dssott.com"
-  skip-domain:
-  - "+.apple.com"
-  - Mijia Cloud
-  - dlg.io.mi.com
-  - "+.oray.com"
-  - "+.sunlogin.net"
-  - "+.push.apple.com"
-  force-dns-mapping: true
-  parse-pure-ip: true
-tun:
-  enable: true
-  stack: system
-  device: utun
-  dns-hijack:
-  - 127.0.0.1:53
-  endpoint-independent-nat: true
-  auto-route: false
-  auto-detect-interface: false
-  auto-redirect: false
-  strict-route: false
-profile:
-  store-selected: true
