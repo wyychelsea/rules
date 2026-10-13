@@ -1,0 +1,8 @@
+# NAME: USA
+# AUTHOR: BlueLion
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-08-1 09:00:00
+# TOTAL: 1
+
+payload:
+  - +.t-mobile.com
