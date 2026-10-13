@@ -66,7 +66,7 @@ dns:
 
 # 出站策略 
 proxy-groups:
-  - {name: 🚀默认代理, type: select, proxies: [🇨🇳台湾prpr, DIRECT]}
+  - {name: 🚀默认代理, type: select, proxies: [🔯故障转移, 🇳🇬自建尼日利亚, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇱🇰斯里兰卡, 📌手动, DIRECT]}
   - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
 
 
