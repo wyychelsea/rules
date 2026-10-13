@@ -103,7 +103,7 @@ proxy-groups:
   - {name: 🇹🇷土耳其, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)"}
   - {name: 🇦🇷阿根廷, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)"}
   - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)"}
-  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)"}
+  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
 
 
 # 规则匹配
