@@ -107,7 +107,7 @@ rules:
 #  - RULE-SET,cn!_domain,🌍国外
 #  - RULE-SET,cn_domain,🌏国内
   - RULE-SET,cn_ip,DIRECT
-  - MATCH,🐟漏网之鱼
+  - MATCH,🐟 漏网之鱼
 
 # 规则集
 ## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
