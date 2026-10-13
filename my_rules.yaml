@@ -75,7 +75,7 @@ proxy-groups:
   - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🔍谷歌搜索, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🛩机场, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🤖OpenAI, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🤖AI, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💻GitHub, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📺Chromecast, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
@@ -172,7 +172,8 @@ rules:
   - RULE-SET,github_domain,💻GitHub
   - RULE-SET,Qobuz_classical,🎵Qobuz
   - RULE-SET,Download_classical,DIRECT
-  - RULE-SET,openai_domain,🤖OpenAI
+#  - RULE-SET,openai_domain,🤖OpenAI
+  - RULE-SET,ai_domain,🤖AI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
   - RULE-SET,ebay_domain,🛒eBay
   - RULE-SET,telegram_domain,💬Telegram
@@ -247,6 +248,7 @@ rule-providers:
   spotify_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs"}
   github_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
   openai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/openai.mrs"}
+  ai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
   googlefcm_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   ebay_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ebay.mrs"}
   telegram_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}
