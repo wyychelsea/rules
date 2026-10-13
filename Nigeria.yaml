@@ -5,4 +5,5 @@
 # TOTAL: 1
 
 payload:
-  - +.bybit.com
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-KEYWORD,bybit
