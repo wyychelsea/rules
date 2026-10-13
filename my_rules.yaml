@@ -89,7 +89,6 @@ rules:
   - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,paypal_domain,DIRECT
   - RULE-SET,cn!_domain,🚀 默认代理
   - RULE-SET,cn_ip,DIRECT
   - MATCH,🐟 漏网之鱼
