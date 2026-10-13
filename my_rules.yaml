@@ -170,10 +170,10 @@ rules:
   - RULE-SET,Synology_domain,🗄群晖
   - RULE-SET,Twitch_domain,🐭Twitch
   - RULE-SET,Spotify_domain,🎵Spotify
-  - RULE-SET,WeChat_domain,💬WeChat
+  - RULE-SET,WeChat_classical,💬WeChat
   - RULE-SET,GitHub_domain,💻GitHub
-  - RULE-SET,Qobuz_domain,🎵Qobuz
-  - RULE-SET,Download_domain,DIRECT
+  - RULE-SET,Qobuz_classical,🎵Qobuz
+  - RULE-SET,Download_classical,DIRECT
   - RULE-SET,OpenAI_domain,🤖OpenAI
   - RULE-SET,GoogleFCM_domain,📢谷歌FCM
   - RULE-SET,eBay_domain,🛒eBay
