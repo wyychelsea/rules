@@ -66,8 +66,9 @@ dns:
 
 # 出站策略 
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [🇨🇳台湾prpr, DIRECT]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, DIRECT]}
+  - {name: 🚀默认代理, type: select, proxies: [🇨🇳台湾prpr, DIRECT]}
+  - {name: 🐟漏网之鱼, type: select, proxies: [🚀默认代理, DIRECT]}
+  - {name: 🔯故障转移, type: select, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 📌手动, type: select, include-all: true}
   - {name: 🇨🇳台湾prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇨🇳台湾TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
@@ -99,7 +100,7 @@ rules:
 #  - RULE-SET,cn!_domain,🌍国外
 #  - RULE-SET,cn_domain,🌏国内
   - RULE-SET,cn_ip,DIRECT
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🐟漏网之鱼
 
 # 规则集
 ## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
