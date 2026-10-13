@@ -5,4 +5,5 @@
 # TOTAL: 1
 
 payload:
-  - +.t-mobile.com
+  - DOMAIN-SUFFIX,t-mobile.com
+  - DOMAIN-KEYWORD,t-mobile
