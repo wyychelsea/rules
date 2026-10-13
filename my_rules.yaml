@@ -116,8 +116,36 @@ rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
+  classical_yaml: &classical_yaml {type: http, interval: 86400, behavior: classical, format: yaml}
 
 rule-providers:
+  IPTV_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
+  GoogleSearch_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleSearch/GoogleSearch.yaml"}
+  Chromecast_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Chromecast/Chromecast.yaml"}
+  GoogleVoice_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
+  WorldCup_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.yaml"}
+  PLEX_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/PLEX.yaml"}
+  Duolingo_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Duolingo.yaml"}
+  Nigeria_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
+  Deezer_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Deezer/Deezer.yaml"}
+  Fountain_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
+  TIDAL_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.yaml"}
+  Turkey_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
+  Speedtest_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.yaml"}
+  Airport_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
+  RemoteDesktop_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/RemoteDesktop/RemoteDesktop.yaml"}
+  WeChat_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
+  Qobuz_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
+  Download_classical: {<<: *classical_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.yaml"}
+
+
+
+  
+
+
+
+
+
   fakeipfilter_cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-cn.list"}
   fakeipfilter_!cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-!cn.list"}
   private_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
