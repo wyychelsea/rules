@@ -87,7 +87,7 @@ proxy-groups:
   - {name: 🍎AppleTV, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎦HBO, type: select, proxies: [🎥Netflix节点, 🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
   - {name: 📺巴哈姆特, type: select, proxies: [🇨🇳台湾prpr, 🇨🇳台湾TAG]}
-  - {name: 🐤多邻国, type: select, proxies: [🚀默认代理, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🏠家宽高倍, 📌手动, DIRECT]}
+  - {name: 🐤多邻国, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇹🇷土耳其网站, type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇳🇬尼日利亚网站, type: select, proxies: [🇳🇬尼日利亚, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🛒Amazon, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀默认代理]}
