@@ -113,7 +113,8 @@ proxy-groups:
   - {name: 🎮任天堂, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇯🇵日本prpr, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎮Steam, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🐟漏网之鱼, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚", dialer-proxy: "🍟CNIX"}
+  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚"}
+#  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚", dialer-proxy: "🍟CNIX"}
   - {name: 🇨🇳自建台湾, type: select, include-all: true, filter: "自建台湾"}
   - {name: 🏠家宽高倍, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: ♻️Nano, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "Nano"}  
