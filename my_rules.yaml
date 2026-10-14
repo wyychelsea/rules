@@ -100,7 +100,7 @@ proxy-groups:
   - {name: 💰Binance, type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀默认代理]}
   - {name: 🚀Speedtest, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💬WeChat, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇨🇳自建台湾, ♻️Nano, 🍟CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇨🇳台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇨🇳台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 📺IPTV, type: select, proxies: [DIRECT]}
+#  - {name: 📺IPTV, type: select, proxies: [DIRECT]}
   - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 📺PLEX, type: select, proxies: [DIRECT]}
   - {name: 🖥️远程连接, type: select, proxies: [DIRECT]}
@@ -143,7 +143,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,IPTV_classical,📺IPTV
+#  - RULE-SET,IPTV_classical,📺IPTV
   - RULE-SET,GoogleSearch_classical,🔍谷歌搜索
   - RULE-SET,Chromecast_classical,📺Chromecast
   - RULE-SET,GoogleVoice_classical,💬GoogleVoice
