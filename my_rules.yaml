@@ -1,6 +1,6 @@
 # 必读！！！
 # 此配置为覆写配置模板，不含节点以及订阅配置，不知道用途的不要用。
-# 机场订阅
+# 节点信息由sub-store自动填写
 
 # 全局配置 
 mixed-port: 7890
@@ -39,7 +39,8 @@ sniffer:
 # 入站
 tun:
   enable: true
-  stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
+#  stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
+  stack: mips   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
   dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
