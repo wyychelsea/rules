@@ -89,7 +89,7 @@ proxy-groups:
   - {name: 🟦⬜Disney+, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🍎AppleTV, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: ⬛⬜HBO, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
-  - {name: 📺巴哈姆特, type: select, proxies: [🇹🇼台湾prpr, 🇹🇼台湾TAG]}
+  - {name: 🐉巴哈姆特, type: select, proxies: [🇹🇼台湾prpr, 🇹🇼台湾TAG]}
   - {name: 🦉多邻国, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇹🇷土耳其网站, type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇳🇬尼日利亚网站, type: select, proxies: [🇳🇬尼日利亚, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
@@ -99,7 +99,7 @@ proxy-groups:
   - {name: 💳PayPal, type: select, proxies: [DIRECT]}
   - {name: 🪙Binance, type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀默认代理]}
   - {name: ⏱️Speedtest, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 💬WeChat, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🟩WeChat, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📡IPTV, type: select, proxies: [DIRECT]}
   - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 🎬PLEX, type: select, proxies: [DIRECT]}
@@ -159,7 +159,7 @@ rules:
   - RULE-SET,Turkey_classical,🇹🇷土耳其网站
   - RULE-SET,Speedtest_classical,⏱️Speedtest
   - RULE-SET,Airport_classical,🛩机场
-  - RULE-SET,bahamut_domain,📺巴哈姆特
+  - RULE-SET,bahamut_domain,🐉巴哈姆特
   - RULE-SET,apple-tvplus_domain,🍎AppleTV
   - RULE-SET,bing_domain,Ⓜ️微软Bing
   - RULE-SET,RemoteDesktop_classical,🔄远程连接
@@ -169,7 +169,7 @@ rules:
   - RULE-SET,synology_domain,🗄群晖
   - RULE-SET,twitch_domain,🟪⬜Twitch
   - RULE-SET,spotify_domain,⬛🟩Spotify
-  - RULE-SET,WeChat_classical,💬WeChat
+  - RULE-SET,WeChat_classical,🟩WeChat
   - RULE-SET,github_domain,🐙GitHub
   - RULE-SET,Qobuz_classical,🎵Qobuz
   - RULE-SET,Download_classical,DIRECT
