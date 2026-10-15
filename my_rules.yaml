@@ -79,7 +79,7 @@ proxy-groups:
   - {name: 💻GitHub, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📺Chromecast, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 📌手动]}
+  - {name: 🎙️GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 📌手动]}
   - {name: ✈️Telegram, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📞WhatsApp, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💎TIDAL, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
@@ -88,19 +88,19 @@ proxy-groups:
   - {name: ⬛🟥Netflix, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🟦⬜Disney+, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🍎AppleTV, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🎦HBO, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
+  - {name: ⬛⬜HBO, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
   - {name: 📺巴哈姆特, type: select, proxies: [🇹🇼台湾prpr, 🇹🇼台湾TAG]}
   - {name: 🦉多邻国, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇹🇷土耳其网站, type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇳🇬尼日利亚网站, type: select, proxies: [🇳🇬尼日利亚, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🛒Amazon, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀默认代理]}
-  - {name: 🛒Bestbuy, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
-  - {name: 🛒eBay, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
+  - {name: 📦Amazon, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀默认代理]}
+  - {name: 🏷️BestBuy, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
+  - {name: 🛍️eBay, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
   - {name: 💳PayPal, type: select, proxies: [DIRECT]}
   - {name: 🪙Binance, type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀默认代理]}
-  - {name: 🚀Speedtest, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: ⏱️Speedtest, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💬WeChat, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 📺IPTV, type: select, proxies: [DIRECT]}
+  - {name: 📡IPTV, type: select, proxies: [DIRECT]}
   - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 🎬PLEX, type: select, proxies: [DIRECT]}
   - {name: 🖥️远程连接, type: select, proxies: [DIRECT]}
@@ -145,10 +145,10 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,IPTV_classical,📺IPTV
+  - RULE-SET,IPTV_classical,📡IPTV
   - RULE-SET,GoogleSearch_classical,🔍谷歌搜索
   - RULE-SET,Chromecast_classical,📺Chromecast
-  - RULE-SET,GoogleVoice_classical,💬GoogleVoice
+  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
   - RULE-SET,WorldCup_classical,⚽️世界杯
   - RULE-SET,PLEX_classical,🎬PLEX
   - RULE-SET,Duolingo_classical,🦉多邻国
@@ -157,7 +157,7 @@ rules:
   - RULE-SET,Fountain_classical,⛲喷泉
   - RULE-SET,TIDAL_classical,💎TIDAL
   - RULE-SET,Turkey_classical,🇹🇷土耳其网站
-  - RULE-SET,Speedtest_classical,🚀Speedtest
+  - RULE-SET,Speedtest_classical,⏱️Speedtest
   - RULE-SET,Airport_classical,🛩机场
   - RULE-SET,bahamut_domain,📺巴哈姆特
   - RULE-SET,apple-tvplus_domain,🍎AppleTV
@@ -176,14 +176,14 @@ rules:
 #  - RULE-SET,openai_domain,🤖OpenAI
   - RULE-SET,ai_domain,🤖AI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
-  - RULE-SET,ebay_domain,🛒eBay
+  - RULE-SET,ebay_domain,🛍️eBay
   - RULE-SET,telegram_domain,✈️Telegram
-  - RULE-SET,hbo_domain,🎦HBO
-  - RULE-SET,bestbuy_domain,🛒Bestbuy
+  - RULE-SET,hbo_domain,⬛⬜HBO
+  - RULE-SET,bestbuy_domain,🏷️BestBuy
   - RULE-SET,nintendo_domain,🟥⬜任天堂
   - RULE-SET,disney_domain,🟦⬜Disney+
   - RULE-SET,youtube_domain,▶️YouTube
-  - RULE-SET,amazon_domain,🛒Amazon
+  - RULE-SET,amazon_domain,📦Amazon
   - RULE-SET,paypal_domain,💳PayPal
   - RULE-SET,steam@cn_domain,DIRECT
   - RULE-SET,steam_domain,🎮Steam
