@@ -80,7 +80,7 @@ proxy-groups:
   - {name: 📺Chromecast, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 📌手动]}
-  - {name: 💬Telegram, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 📲Telegram, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💬WhatsApp, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎵TIDAL, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
   - {name: 🎵Qobuz, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
@@ -177,7 +177,7 @@ rules:
   - RULE-SET,ai_domain,🤖AI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
   - RULE-SET,ebay_domain,🛒eBay
-  - RULE-SET,telegram_domain,💬Telegram
+  - RULE-SET,telegram_domain,📲Telegram
   - RULE-SET,hbo_domain,🎦HBO
   - RULE-SET,bestbuy_domain,🛒Bestbuy
   - RULE-SET,nintendo_domain,🎮任天堂
@@ -195,7 +195,7 @@ rules:
   - RULE-SET,apple_domain,🍎苹果服务
   - RULE-SET,google_ip,🔴🟡🔵🟢谷歌
   - RULE-SET,apple_ip,🍎苹果服务
-  - RULE-SET,telegram_ip,💬Telegram
+  - RULE-SET,telegram_ip,📲Telegram
   - RULE-SET,netflix_ip,🎥Netflix
   - RULE-SET,cn!_domain,🚀默认代理
   - RULE-SET,cn_domain,DIRECT
