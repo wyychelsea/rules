@@ -81,7 +81,7 @@ proxy-groups:
   - {name: 📢谷歌FCM, type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 💬GoogleVoice, type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 📌手动]}
   - {name: 📲Telegram, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 💬WhatsApp, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 📞WhatsApp, type: select, proxies: [🚀默认代理, 🎥流媒体节点, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎵TIDAL, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
   - {name: 🎵Qobuz, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
   - {name: 🎵Deezer, type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️Nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
@@ -164,7 +164,7 @@ rules:
   - RULE-SET,bing_domain,Ⓜ️微软Bing
   - RULE-SET,RemoteDesktop_classical,🖥️远程连接
   - RULE-SET,binance_domain,💰Binance
-  - RULE-SET,whatsapp_domain,💬WhatsApp
+  - RULE-SET,whatsapp_domain,📞WhatsApp
   - RULE-SET,onedrive_domain,Ⓜ️OneDrive
   - RULE-SET,synology_domain,🗄群晖
   - RULE-SET,twitch_domain,🐭Twitch
