@@ -119,7 +119,7 @@ proxy-groups:
   - {name: 🏠家宽高倍, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: ♻️Nano, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "Nano"}  
 #  - {name: 🔯故障转移, type: fallback, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🔯自建故转, type: fallback, interval: 300, proxies: [🇹🇼自建台湾, 🇳🇬自建尼日]}
+  - {name: 🔯自建故转, type: fallback, interval: 60, proxies: [🇹🇼自建台湾, 🇳🇬自建尼日]}
   - {name: 🇹🇼台湾prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇹🇼台湾TAG, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【TAG】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇭🇰香港prpr, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)【prpr】.*(HK|Hong.*?Kong|懒人|香港|港|深港|沪港|呼港|HKT|HKBN|HGC|WTT|CMI|京港)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
