@@ -103,7 +103,6 @@ proxy-groups:
   - {name: 📡IPTV, type: select, proxies: [DIRECT]}
   - {name: 🗄群晖, type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 📀Plex, type: select, proxies: [DIRECT]}
-#  - {name: 🔄远程连接, type: select, proxies: [DIRECT]}
   - {name: ⚽️世界杯, type: select, proxies: [DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: ⛲喷泉, type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: Ⓜ️微软Bing, type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
@@ -160,7 +159,6 @@ rules:
   - RULE-SET,bahamut_domain,🐉巴哈姆特
   - RULE-SET,apple-tvplus_domain,🎬AppleTV+
   - RULE-SET,bing_domain,Ⓜ️微软Bing
-#  - RULE-SET,RemoteDesktop_classical,🔄远程连接
   - RULE-SET,binance_domain,🪙Binance
   - RULE-SET,whatsapp_domain,📞WhatsApp
   - RULE-SET,onedrive_domain,☁️️OneDrive
@@ -170,7 +168,6 @@ rules:
   - RULE-SET,WeChat_classical,🟩WeChat
   - RULE-SET,github_domain,🐙GitHub
   - RULE-SET,Qobuz_classical,🎵Qobuz
-#  - RULE-SET,Download_classical,DIRECT
 #  - RULE-SET,openai_domain,🤖OpenAI
   - RULE-SET,ai_domain,🤖AI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
@@ -230,10 +227,8 @@ rule-providers:
   Turkey_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
   Speedtest_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.yaml"}
   Airport_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
-#  RemoteDesktop_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/RemoteDesktop/RemoteDesktop.yaml"}
   WeChat_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
   Qobuz_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
-#  Download_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download.yaml"}
 
 
   bahamut_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bahamut.mrs"}
