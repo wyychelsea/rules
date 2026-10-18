@@ -65,6 +65,7 @@ dns:
     - https://doh.pub/dns-query
 
 # 出站策略 
+rule-anchor:
   speed: &speed {url: https://www.apple.com/library/test/success.html, interval: 300}
   speed50: &speed50 {url: https://www.apple.com/library/test/success.html, tolerance: 50, interval: 300}
 proxy-groups:
