@@ -50,6 +50,7 @@ dns:
   enable: true
   cache-algorithm: arc
   ipv6: false
+  respect-rules: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.0/16
   fake-ip-filter-mode: blacklist
