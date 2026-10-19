@@ -24,19 +24,23 @@ external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/ar
 # 嗅探
 sniffer:
   enable: true
-  force-dns-mapping: true  # 强制将经过嗅探的域名映射回真/假 IP，防止规则脱靶
-  parse-pure-ip: true 
+  parse-pure-ip: true
+  force-dns-mapping: false # 👈 建议显式关闭，更适合 redir-host 模式
   sniff:
     HTTP:
       ports: [80, 8080-8880]
       override-destination: true
     TLS:
-      ports: [443, 8443]
+      ports:
+      override-destination: true # 👈 核心 2：用嗅探到的真实域名覆盖原本的纯 IP 目标，重新触发规则判定
     QUIC:
-      ports: [443, 8443]
+      ports:
+      override-destination: true
   skip-domain:
-    - "Mijia Cloud"
     - "+.push.apple.com"
+    - "+.mi.com"            # 👈 改为小米/米家标准域名通配符，防止智能家居被误伤
+    - "+.mijia.com"
+    - "+.xiaomi.com"
 
 # 入站
 tun:
@@ -53,16 +57,11 @@ dns:
   cache-algorithm: arc
   ipv6: false
   respect-rules: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.0/16
-  fake-ip-filter-mode: blacklist
-  fake-ip-filter:
-    - "*"
-    - "+.lan"
-    - "+.local"
-    - "+.market.xiaomi.com"
+  enhanced-mode: redir-host
   default-nameserver:
     - 223.5.5.5
+    - 119.29.29.29
+    - 180.184.1.1
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -147,6 +146,11 @@ proxy-groups:
   
 # 规则匹配
 rules:
+  # 1. 👈 核心：精准拦截群晖 qBittorrent 端口，强制直连（包含 TCP 和 UDP 传入传出）
+  - SRC-PORT,63219,DIRECT
+  - DEST-PORT,63219,DIRECT
+  # 2. 👈 协议辅助：Mihomo 内核原生支持的 BT 协议智能直连
+  - PROTOCOL,BITTORRENT,DIRECT
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,IPTV_classical,📡IPTV
