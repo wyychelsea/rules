@@ -139,11 +139,10 @@ rules:
 #  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
   - RULE-SET,WeChat_classical,DIRECT
 #  - RULE-SET,WorldCup_classical,⚽️世界杯
-  - RULE-SET,Nigeria_classical,🇳🇬尼日利亚网站
+  - RULE-SET,Airport_classical,🛫机场
   - RULE-SET,Fountain_classical,⛲喷泉
   - RULE-SET,Turkey_classical,🇹🇷土耳其网站
-  - RULE-SET,Airport_classical,🛫机场
-
+  - RULE-SET,Nigeria_classical,🇳🇬尼日利亚网站
 
   - RULE-SET,spotify_domain,🟢Spotify
   - RULE-SET,youtube_domain,▶️YouTube
