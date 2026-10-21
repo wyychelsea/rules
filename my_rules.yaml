@@ -163,10 +163,7 @@ rules:
   - RULE-SET,kick_domain,🎮Kick
   - RULE-SET,github_domain,🐙GitHub
   - RULE-SET,plex_domain,📀Plex
-  - RULE-SET,apple-tvplus_domain,🎬AppleTV+
   - RULE-SET,bing_domain,Ⓜ️微软Bing
-  - RULE-SET,binance_domain,🪙Binance
-  - RULE-SET,whatsapp_domain,📞WhatsApp
 #  - RULE-SET,onedrive_domain,☁️️OneDrive
   - RULE-SET,synology_domain,🗄群晖
   - RULE-SET,tidal_domain,💎TIDAL
@@ -174,18 +171,21 @@ rules:
   - RULE-SET,Qobuz_classical,🎵Qobuz
   - RULE-SET,ai_domain,🤖AI
   - RULE-SET,duolingo_domain,🦉多邻国
-  - RULE-SET,bahamut_domain,🐉巴哈姆特
 #  - RULE-SET,openai_domain,🤖OpenAI
   - RULE-SET,googlefcm_domain,📢谷歌FCM
   - RULE-SET,telegram_domain,✈️Telegram
   - RULE-SET,netflix_domain,🍿Netflix
   - RULE-SET,hbo_domain,🎦HBO
   - RULE-SET,disney_domain,🏰Disney+
+  - RULE-SET,apple-tvplus_domain,🎬AppleTV+
+  - RULE-SET,bahamut_domain,🐉巴哈姆特
   - RULE-SET,nintendo_domain,🍄任天堂
   - RULE-SET,paypal_domain,💳PayPal
   - RULE-SET,amazon_domain,📦Amazon
   - RULE-SET,bestbuy_domain,🏷️BestBuy
   - RULE-SET,ebay_domain,🛍️eBay
+  - RULE-SET,binance_domain,🪙Binance
+  - RULE-SET,whatsapp_domain,📞WhatsApp
   - RULE-SET,speedtest_domain,⏱️Speedtest
   - RULE-SET,steam@cn_domain,DIRECT
   - RULE-SET,steam_domain,🎮Steam
@@ -214,6 +214,7 @@ rule-anchor:
 rule-providers:
   fakeipfilter_cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-cn.list"}
   fakeipfilter_!cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-!cn.list"}
+
   private_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
   cn!_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
@@ -228,7 +229,6 @@ rule-providers:
   Airport_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
   WeChat_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
   Qobuz_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
-
 
   
   ai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
@@ -268,12 +268,6 @@ rule-providers:
   whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs"}
   youtube_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}
   
-  
-  
-  
-
-  
-
   
   google_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
   apple_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo-lite/geoip/apple.mrs"}
