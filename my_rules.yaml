@@ -92,10 +92,8 @@ proxy-groups:
   - {name: 📦Amazon,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🇮🇳印度, 🚀默认代理]}
   - {name: 🏷️BestBuy,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
   - {name: 🛍️eBay,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理]}
-  - {name: 💳PayPal,type: select, proxies: [DIRECT]}
   - {name: 🪙Binance,type: select, proxies: [🇯🇵日本prpr, 🇯🇵日本TAG, 🚀默认代理]}
   - {name: ⏱️Speedtest,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🟩WeChat,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📡IPTV,type: select, proxies: [DIRECT]}
   - {name: 🗄群晖,type: select, proxies: [DIRECT, 🚀默认代理]}
   - {name: 📀Plex,type: select, proxies: [DIRECT]}
@@ -143,7 +141,7 @@ rules:
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,IPTV_classical,📡IPTV
 #  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
-  - RULE-SET,WeChat_classical,🟩WeChat
+  - RULE-SET,WeChat_classical,DIRECT
   - RULE-SET,WorldCup_classical,⚽️世界杯
   - RULE-SET,Nigeria_classical,🇳🇬尼日利亚网站
   - RULE-SET,Fountain_classical,⛲喷泉
@@ -174,7 +172,7 @@ rules:
   - RULE-SET,apple-tvplus_domain,🎬AppleTV+
   - RULE-SET,bahamut_domain,🐉巴哈姆特
   - RULE-SET,nintendo_domain,🍄任天堂
-  - RULE-SET,paypal_domain,💳PayPal
+  - RULE-SET,paypal_domain,DIRECT
   - RULE-SET,amazon_domain,📦Amazon
   - RULE-SET,bestbuy_domain,🏷️BestBuy
   - RULE-SET,ebay_domain,🛍️eBay
