@@ -54,11 +54,9 @@ dns:
   default-nameserver:
     - 119.29.29.29
     - 223.5.5.5
-    - 180.184.1.1
   nameserver:
     - 119.29.29.29
     - 223.5.5.5
-    - 180.184.1.1
 
 # 测速公共模板
 speed: &speed {url: http://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
@@ -210,7 +208,6 @@ rule-anchor:
 rule-providers:
 #  fakeipfilter_cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-cn.list"}
 #  fakeipfilter_!cn: {<<: *domain_text, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-!cn.list"}
-
   private_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
   cn!_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
