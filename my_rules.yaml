@@ -71,9 +71,9 @@ speed: &speed {url: http://www.gstatic.com/generate_204, interval: 300, toleranc
 proxy-groups:
   - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, DIRECT]}
   - {name: 🟢Spotify,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
-  - {name: ▶️YouTube,type: select, proxies: [🎥流媒体节点, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
-  - {name: 👾Twitch,type: select, proxies: [🎥流媒体节点, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎥流媒体节点,type: select, proxies: [♻️nano, 🇭🇰香港CNIX, 🇳🇬自建尼日, 🇹🇼自建台湾, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, DIRECT]}
+  - {name: 👾Twitch,type: select, proxies: [🎥流媒体节点, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: ▶️YouTube,type: select, proxies: [🎥流媒体节点, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
   - {name: 🔵🔴🟡🟢谷歌,type: select, proxies: [🔯自建故转, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🔍谷歌搜索,type: select, proxies: [🔯自建故转, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
