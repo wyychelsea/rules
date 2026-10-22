@@ -100,8 +100,8 @@ proxy-groups:
   - {name: Ⓜ️微软服务,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🍎苹果服务,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🍄任天堂,type: select, proxies: [DIRECT, 🚀默认代理, ♻️nano, 🇯🇵日本prpr, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🎮Steam,type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🐟漏网之鱼,type: select, proxies: [🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🎮Steam,type: select, proxies: [🎥流媒体代理, 🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🐟漏网之鱼,type: select, proxies: [🎥流媒体代理, 🚀默认代理, DIRECT, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🏠家宽高倍, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: ♻️nano, type: url-test, <<: *speed, include-all: true, filter: "nano"}  
   - {name: 🇹🇼台湾prpr, type: url-test, include-all: true, <<: *speed, filter: "(?i)【prpr】.*(TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
