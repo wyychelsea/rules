@@ -205,16 +205,15 @@ rule-providers:
   cn!_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
 
-
-  IPTV_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
-  GoogleVoice_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
-  WorldCup_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.yaml"}
-  Nigeria_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
-  Fountain_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
-  Turkey_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
   Airport_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
-  WeChat_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
+  Fountain_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
+  GoogleVoice_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
+  IPTV_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
+  Nigeria_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
   Qobuz_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
+  Turkey_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
+  WeChat_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.yaml"}
+  WorldCup_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/WorldCup.yaml"}
 
   
   ai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
