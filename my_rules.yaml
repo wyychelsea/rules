@@ -178,6 +178,7 @@ rules:
   - RULE-SET,steam_domain,🎮Steam
   - RULE-SET,microsoft@cn_domain,DIRECT
   - RULE-SET,microsoft_domain,Ⓜ️微软服务
+  - RULE-SET,google@cn_domain,DIRECT
   - RULE-SET,google_domain,🔵🔴🟡🟢谷歌
   - RULE-SET,apple@cn_domain,DIRECT
   - RULE-SET,apple_domain,🍎苹果服务
@@ -230,6 +231,7 @@ rule-providers:
   duolingo_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/duolingo.mrs"}
   ebay_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ebay.mrs"}
   github_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
+  google@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google@cn.mrs"}
   google_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}
   googlefcm_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   hbo_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/hbo.mrs"}
