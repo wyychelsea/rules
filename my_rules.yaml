@@ -135,7 +135,6 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
-#  - RULE-SET,IPTV_classical,DIRECT
 #  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
   - RULE-SET,WeChat_classical,DIRECT
 #  - RULE-SET,WorldCup_classical,⚽️世界杯
@@ -209,7 +208,6 @@ rule-providers:
   Airport_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Airport.yaml"}
   Fountain_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Fountain.yaml"}
   GoogleVoice_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"}
-  IPTV_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/IPTV.yaml"}
   Nigeria_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Nigeria.yaml"}
   Qobuz_classical: {<<: *classical, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.yaml"}
   Turkey_classical: {<<: *classical, url: "https://raw.githubusercontent.com/wyychelsea/rules/refs/heads/main/Turkey.yaml"}
