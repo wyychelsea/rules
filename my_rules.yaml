@@ -135,7 +135,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
-  - RULE-SET,IPTV_classical,DIRECT
+#  - RULE-SET,IPTV_classical,DIRECT
 #  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
   - RULE-SET,WeChat_classical,DIRECT
 #  - RULE-SET,WorldCup_classical,⚽️世界杯
