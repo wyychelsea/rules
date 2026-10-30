@@ -14,10 +14,7 @@ keep-alive-idle: 600
 keep-alive-interval: 15
 profile:
   store-selected: true
-  store-fake-ip: true
 
-external-controller: 0.0.0.0:9090
-secret: ""
 external-ui: ui
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
@@ -63,7 +60,7 @@ dns:
     - 223.5.5.5
 
 # 测速公共模板
-speed: &speed {url: http://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
+speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
 
 # 出站策略
 proxy-groups:
@@ -121,18 +118,18 @@ proxy-groups:
   - {name: 🇯🇵日本prpr, type: url-test, include-all: true, <<: *speed, filter: "(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇯🇵日本TAG, type: url-test, include-all: true, <<: *speed, filter: "(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)", exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🇯🇵日本家宽TAG, type: url-test, include-all: true, <<: *speed, filter: "(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan).*?(家宽|家庭|Residential)"}
-  - {name: 🇮🇳印度, type: url-test, include-all: true, <<: *speed, filter: "(?i)(印度|India|\bIN\b|\bIND\b)"}
-  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, <<: *speed, filter: "(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)"}
-  - {name: 🇹🇷土耳其, type: url-test, include-all: true, <<: *speed, filter: "(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)"}
-  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, <<: *speed, filter: "(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)"}
-  - {name: 🇦🇷阿根廷TAG, type: url-test, include-all: true, <<: *speed, filter: "(?i)【TAG】.*(阿根廷|Argentina|\bAR\b|\bARG\b)"}
-  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, <<: *speed, filter: "(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)"}
-  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, <<: *speed, filter: "(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)", exclude-filter: "自建"}
+  - {name: 🇮🇳印度, type: url-test, include-all: true, <<: *speed, filter: '(?i)(印度|India|\bIN\b|\bIND\b)'}
+  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, <<: *speed, filter: '(?i)(菲律宾|Philippines|\bPH\b|\bPHL\b)'}
+  - {name: 🇹🇷土耳其, type: url-test, include-all: true, <<: *speed, filter: '(?i)(土耳其|Turkey|\bTR\b|\bTUR\b)'}
+  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, <<: *speed, filter: '(?i)(阿根廷|Argentina|\bAR\b|\bARG\b)'}
+  - {name: 🇦🇷阿根廷TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(阿根廷|Argentina|\bAR\b|\bARG\b)'}
+  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, <<: *speed, filter: '(?i)(斯里兰卡|Sri Lanka|\bLK\b|\bLKA\b)'}
+  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, <<: *speed, filter: '(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)', exclude-filter: "自建"}
   - {name: 🇹🇼自建台湾, type: url-test, include-all: true, <<: *speed, filter: "自建台湾"}
 #  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚", dialer-proxy: "♻️nano"}
   - {name: 🇳🇬自建尼日, type: url-test, include-all: true, <<: *speed, filter: "自建尼日利亚"}
 #  - {name: 🔯故障转移, type: fallback, <<: *speed, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🔯自建故转, type: fallback, url: http://www.gstatic.com/generate_204, interval: 50, timeout: 2000, proxies: [🇹🇼自建台湾, 🇳🇬自建尼日, 🇹🇼台湾prpr]}
+  - {name: 🔯自建故转, type: fallback, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, proxies: [🇹🇼自建台湾, 🇳🇬自建尼日, 🇹🇼台湾prpr]}
 
   
 # 规则匹配
@@ -253,7 +250,7 @@ rule-providers:
   steam@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
   steam_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
   telegram_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}
-  tidal_domain: {<<: *domain, url: "http://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tidal.mrs"}
+  tidal_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tidal.mrs"}
   whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs"}
   youtube_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}
   
