@@ -66,7 +66,7 @@ speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, toleran
 proxy-groups:
   - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, DIRECT]}
   - {name: 🟢Spotify,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
-  - {name: 🎥流媒体代理,type: select, proxies: [♻️nano, 🇭🇰香港CNIX, 🇳🇬自建尼日, 🇹🇼自建台湾, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, DIRECT]}
+  - {name: 🎥流媒体代理,type: select, proxies: [♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇳🇬自建尼日, 🇹🇼自建台湾, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, DIRECT]}
   - {name: 👾Twitch,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: ▶️YouTube,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
   - {name: 🔵🔴🟡🟢谷歌,type: select, proxies: [🔯自建故转, 🚀默认代理, 🇳🇬自建尼日, 🇹🇼自建台湾, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
