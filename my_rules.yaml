@@ -61,10 +61,11 @@ dns:
 
 # 测速公共模板
 speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
+nodes: &nodes {🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动}
 
 # 出站策略
 proxy-groups:
-  - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, DIRECT]}
+  - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, <<: *nodes, DIRECT]}
   - {name: 🟢Spotify,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
   - {name: 🎥流媒体代理,type: select, proxies: [♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇳🇬自建尼日, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, DIRECT]}
   - {name: 👾Twitch,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
