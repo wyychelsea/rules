@@ -61,11 +61,10 @@ dns:
 
 # 测速公共模板
 speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
-ns: &ns {🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动}
 
 # 出站策略
 proxy-groups:
-  - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, <<: *ns, DIRECT]}
+  - {name: 🚀默认代理,type: select, proxies: [🔯自建故转, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, DIRECT]}
   - {name: 🟢Spotify,type: select, proxies: [DIRECT, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, 🇵🇭菲律宾, 🇱🇰斯里兰卡]}
   - {name: 🎥流媒体代理,type: select, proxies: [♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇳🇬自建尼日, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷, 🇮🇳印度, 🇹🇷土耳其, 🇳🇬尼日利亚, DIRECT]}
   - {name: 👾Twitch,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
@@ -73,20 +72,20 @@ proxy-groups:
   - {name: 🔵🔴🟡🟢谷歌,type: select, proxies: [🔯自建故转, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📌手动, type: select, include-all: true, exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🛫机场,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🤖AI,type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
+  - {name: 🤖AI,type: select, proxies: [🇺🇸美国CNIX, 🇺🇸美国prpr, 🇺🇸美国TAG, 📌手动, 🚀默认代理]}
   - {name: 🐙GitHub,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
 #  - {name: 🎙️GoogleVoice,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 📌手动]}
   - {name: ✈️Telegram,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 📞WhatsApp,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 💎TIDAL,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
-  - {name: 🎵Qobuz,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
-  - {name: 💜Deezer,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 💎TIDAL,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 🎵Qobuz,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
+  - {name: 💜Deezer,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
   - {name: 🍿Netflix,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🏰Disney+,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎬AppleTV+,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🎦HBO,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动, 🇦🇷阿根廷]}
   - {name: 🎮Kick,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
-  - {name: 🐉巴哈姆特, type: select, proxies: [🇹🇼台湾prpr, 🇹🇼台湾TAG]}
+  - {name: 🐉巴哈姆特, type: select, proxies: [🇹🇼台湾CNIX, 🇹🇼台湾prpr, 🇹🇼台湾TAG]}
   - {name: 🦉多邻国,type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇹🇷土耳其网站,type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
   - {name: 🇳🇬尼日利亚网站,type: select, proxies: [🇳🇬尼日利亚, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇹🇼台湾CNIX, 🇭🇰香港CNIX, 🇺🇸美国CNIX, 🇸🇬狮城CNIX, 🇯🇵日本CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
