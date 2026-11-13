@@ -85,7 +85,7 @@ proxy-groups:
   - {name: 🎬AppleTV+,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 🎦HBO,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动, 🇦🇷阿根廷]}
   - {name: 🎮Kick,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
-  - {name: 🗄️群晖,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
+#  - {name: 🗄️群晖,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 🐉巴哈姆特, type: select, proxies: [🇹🇼台湾prpr, 🇹🇼台湾TAG]}
   - {name: 🦉多邻国,type: select, proxies: [🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 🇹🇷土耳其网站,type: select, proxies: [🇹🇷土耳其, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
@@ -150,7 +150,8 @@ rules:
   - RULE-SET,kick_domain,🎮Kick
   - RULE-SET,github_domain,🐙GitHub
   - RULE-SET,googlefcm_domain,DIRECT
-  - RULE-SET,synology_domain,🗄️群晖
+  - RULE-SET,synology_domain,DIRECT
+#  - RULE-SET,synology_domain,🗄️群晖
   - RULE-SET,plex_domain,DIRECT
   - RULE-SET,bing_domain,Ⓜ️微软Bing
 #  - RULE-SET,onedrive_domain,☁️️OneDrive
