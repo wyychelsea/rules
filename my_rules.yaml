@@ -60,7 +60,7 @@ dns:
     - 119.29.29.29
 
 # 测速公共模板
-speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
+speed: &speed {type: url-test, include-all: true, url: https://www.gstatic.com/generate_204, interval: 300, tolerance: 50, lazy: true}
 
 # 出站策略
 proxy-groups:
@@ -103,31 +103,31 @@ proxy-groups:
   - {name: 🎮Steam,type: select, proxies: [🎥流媒体代理, 🚀默认代理, DIRECT, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 🐟漏网之鱼,type: select, proxies: [🚀默认代理, 🎥流媒体代理, DIRECT, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 🏠家宽高倍, type: select, include-all: true, filter: "家宽|家庭|住宅|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: ♻️nano, type: url-test, include-all: true, <<: *speed, filter: "nano"}
-  - {name: 🦥懒人, type: url-test, include-all: true, <<: *speed, filter: "懒人"}
-  - {name: 🇹🇼台湾prpr, type: url-test, include-all: true, <<: *speed, filter: '(?i)【prpr】.*(台湾|台北|台中|新北|彰化|台|\bCHT\b|\bHINET\b|\bTW\b|\bTaiwan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇹🇼台湾TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(台湾|台北|台中|新北|彰化|台|\bCHT\b|\bHINET\b|\bTW\b|\bTaiwan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇭🇰香港prpr, type: url-test, include-all: true, <<: *speed, filter: '(?i)【prpr】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇭🇰香港TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇭🇰香港CNIX, type: url-test, include-all: true, <<: *speed, filter: '(?i)【CNIX】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇺🇸美国prpr, type: url-test, include-all: true, <<: *speed, filter: '(?i)【prpr】.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\bUS\b|\bUnited States\b|\bAmerica\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇺🇸美国TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\bUS\b|\bUnited States\b|\bAmerica\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇸🇬狮城prpr, type: url-test, include-all: true, <<: *speed, filter: '(?i)【prpr】.*(新加坡|新|坡|狮城|\bSG\b|\bSingapore\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇸🇬狮城TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(新加坡|新|坡|狮城|\bSG\b|\bSingapore\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇯🇵日本prpr, type: url-test, include-all: true, <<: *speed, filter: '(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇯🇵日本TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
-  - {name: 🇯🇵日本家宽TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b).*?(家宽|家庭|\bResidential\b)'}
-  - {name: 🇮🇳印度, type: url-test, include-all: true, <<: *speed, filter: '(?i)(印度|\bIndia\b|\bIN\b|\bIND\b)'}
-  - {name: 🇵🇭菲律宾, type: url-test, include-all: true, <<: *speed, filter: '(?i)(菲律宾|\bPhilippines\b|\bPH\b|\bPHL\b)'}
-  - {name: 🇹🇷土耳其, type: url-test, include-all: true, <<: *speed, filter: '(?i)(土耳其|\bTurkey\b|\bTR\b|\bTUR\b)'}
-  - {name: 🇦🇷阿根廷, type: url-test, include-all: true, <<: *speed, filter: '(?i)(阿根廷|\bArgentina\b|\bAR\b|\bARG\b)'}
-  - {name: 🇦🇷阿根廷TAG, type: url-test, include-all: true, <<: *speed, filter: '(?i)【TAG】.*(阿根廷|\bArgentina\b|\bAR\b|\bARG\b)'}
-  - {name: 🇱🇰斯里兰卡, type: url-test, include-all: true, <<: *speed, filter: '(?i)(斯里兰卡|\bSri Lanka\b|\bLK\b|\bLKA\b)'}
-  - {name: 🇳🇬尼日利亚, type: url-test, include-all: true, <<: *speed, filter: '(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)', exclude-filter: "自建"}
+  - {name: ♻️nano, <<: *speed, filter: "nano"}
+  - {name: 🦥懒人, <<: *speed, filter: "懒人"}
+  - {name: 🇹🇼台湾prpr, <<: *speed, filter: '(?i)【prpr】.*(台湾|台北|台中|新北|彰化|台|\bCHT\b|\bHINET\b|\bTW\b|\bTaiwan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇹🇼台湾TAG, <<: *speed, filter: '(?i)【TAG】.*(台湾|台北|台中|新北|彰化|台|\bCHT\b|\bHINET\b|\bTW\b|\bTaiwan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇭🇰香港prpr, <<: *speed, filter: '(?i)【prpr】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇭🇰香港TAG, <<: *speed, filter: '(?i)【TAG】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇭🇰香港CNIX, <<: *speed, filter: '(?i)【CNIX】.*(香港|港|深港|沪港|呼港|京港|\bHK\b|\bHong.*?Kong\b|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇺🇸美国prpr, <<: *speed, filter: '(?i)【prpr】.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\bUS\b|\bUnited States\b|\bAmerica\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇺🇸美国TAG, <<: *speed, filter: '(?i)【TAG】.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|\bUS\b|\bUnited States\b|\bAmerica\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇸🇬狮城prpr, <<: *speed, filter: '(?i)【prpr】.*(新加坡|新|坡|狮城|\bSG\b|\bSingapore\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇸🇬狮城TAG, <<: *speed, filter: '(?i)【TAG】.*(新加坡|新|坡|狮城|\bSG\b|\bSingapore\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇯🇵日本prpr, <<: *speed, filter: '(?i)【prpr】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇯🇵日本TAG, <<: *speed, filter: '(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b)', exclude-filter: "自建|家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+  - {name: 🇯🇵日本家宽TAG, <<: *speed, filter: '(?i)【TAG】.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|\bJP\b|\bJapan\b).*?(家宽|家庭|\bResidential\b)'}
+  - {name: 🇮🇳印度, <<: *speed, filter: '(?i)(印度|\bIndia\b|\bIN\b|\bIND\b)'}
+  - {name: 🇵🇭菲律宾, <<: *speed, filter: '(?i)(菲律宾|\bPhilippines\b|\bPH\b|\bPHL\b)'}
+  - {name: 🇹🇷土耳其, <<: *speed, filter: '(?i)(土耳其|\bTurkey\b|\bTR\b|\bTUR\b)'}
+  - {name: 🇦🇷阿根廷, <<: *speed, filter: '(?i)(阿根廷|\bArgentina\b|\bAR\b|\bARG\b)'}
+  - {name: 🇦🇷阿根廷TAG, <<: *speed, filter: '(?i)【TAG】.*(阿根廷|\bArgentina\b|\bAR\b|\bARG\b)'}
+  - {name: 🇱🇰斯里兰卡, <<: *speed, filter: '(?i)(斯里兰卡|\bSri Lanka\b|\bLK\b|\bLKA\b)'}
+  - {name: 🇳🇬尼日利亚, <<: *speed, filter: '(?i)(尼日利亚|Nigeria|\bNG\b|\bNGA\b)', exclude-filter: "自建"}
 #  - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚", dialer-proxy: "♻️nano"}
   - {name: 🇳🇬自建尼日, type: select, include-all: true, filter: "自建尼日利亚"}
   - {name: 🇹🇼自建台湾, type: select, include-all: true, filter: "自建台湾"}
-#  - {name: 🔯故障转移, type: fallback, <<: *speed, include-all: true, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
+#  - {name: 🔯故障转移, type: fallback, include-all: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, filter: "自建|TW|Taiwan|台湾|台北|台中|新北|彰化|CHT|HINET|台|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America", exclude-filter: "家宽|家庭|游戏|星链|蜂窝|倍|2.0|2x|3.0|3x|4.0|4x|5.0|5x|10.0|10x|20.0|20x"}
   - {name: 🔯自建故转, type: fallback, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, proxies: [🇳🇬自建尼日, 🇹🇼台湾prpr, 🇹🇼台湾TAG]}
 
   
