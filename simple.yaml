@@ -65,16 +65,17 @@ speed: &speed {url: https://www.gstatic.com/generate_204, interval: 300, toleran
 # 出站策略
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 📹 YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: ▶️ YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
   - {name: 🍀 Google, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
   - {name: 🤖 AI, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
   - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🐬 OneDrive, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: 🪟 Microsoft, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: Ⓜ️ 微软Bing, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: ☁️️ OneDrive, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
   - {name: 📲 Telegram, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🍿 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
   - {name: 🎮 Steam, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: 🍎 Apple, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, <<: *speed, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🇯🇵 日本节点, type: url-test, include-all: true, <<: *speed, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
@@ -87,23 +88,25 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
+  - RULE-SET,googlefcm_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
-  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,youtube_domain,▶️ YouTube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,onedrive_domain,☁️️ OneDrive
+  - RULE-SET,bing_domain,Ⓜ️ 微软Bing
   - RULE-SET,microsoftcn_domain,DIRECT
-  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,applecn_domain,DIRECT
-  - RULE-SET,apple_domain,🍎 Apple
+  - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,telegram_domain,📲 Telegram
-  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,netflix_domain,🍿 NETFLIX
   - RULE-SET,steamcn_domain,DIRECT
   - RULE-SET,steam_domain,🎮 Steam
   - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,apple_ip,🍎 Apple
+  - RULE-SET,apple_ip,🍎 苹果服务
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,netflix_ip,🍿 NETFLIX,no-resolve
   - RULE-SET,cn!_domain,🚀 默认代理
   - RULE-SET,cn_domain,DIRECT
   - RULE-SET,cn_ip,DIRECT
@@ -121,7 +124,9 @@ rule-providers:
   ai_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}
   google_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}
+  googlefcm_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   github_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"}
+  bing_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bing.mrs"}
   onedrive_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/onedrive.mrs"}
   microsoftcn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
   microsoft_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"}
