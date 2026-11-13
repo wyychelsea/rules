@@ -64,19 +64,20 @@ speed: &speed {type: url-test, include-all: true, url: https://www.gstatic.com/g
  
 # 出站策略
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: ▶️ YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🍀 Google, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🤖 AI, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: Ⓜ️ 微软Bing, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: ☁️️ OneDrive, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: 📲 Telegram, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🍿 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
-  - {name: 🎮 Steam, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: ▶️ YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🍀 Google, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🤖 AI, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: Ⓜ️ 微软Bing, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: ☁️️ OneDrive, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: 📲 Telegram, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🍿 NETFLIX, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🎮 Steam, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: 🍎 苹果服务, type: select, proxies: [DIRECT, 🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🦥 懒人, 🇭🇰 香港节点, 🇺🇲 美国节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 📌 手动选择, DIRECT]}
+  - {name: 🦥 懒人, <<: *speed, filter: "懒人"}
   - {name: 🇭🇰 香港节点, <<: *speed, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🇺🇲 美国节点, <<: *speed, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: 🇯🇵 日本节点, <<: *speed, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
