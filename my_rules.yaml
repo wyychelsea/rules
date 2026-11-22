@@ -136,6 +136,7 @@ proxy-groups:
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
+  - RULE-SET,tailscale_domain,DIRECT
 #  - RULE-SET,GoogleVoice_classical,🎙️GoogleVoice
   - RULE-SET,WeChat_classical,DIRECT
 #  - RULE-SET,WorldCup_classical,⚽️世界杯
@@ -246,6 +247,7 @@ rule-providers:
   spotify_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs"}
   steam@cn_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
   steam_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
+  tailscale_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tailscale.mrs"}
   telegram_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/telegram.mrs"}
   tidal_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tidal.mrs"}
   whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs"}
