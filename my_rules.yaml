@@ -75,7 +75,7 @@ proxy-groups:
   - {name: 🤖AI,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 📌手动, 🚀默认代理]}
   - {name: 🐙GitHub,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 🇹🇼台湾prpr, 🇭🇰香港prpr, 🇺🇸美国prpr, 🇸🇬狮城prpr, 🇯🇵日本prpr, 🇹🇼台湾TAG, 🇭🇰香港TAG, 🇺🇸美国TAG, 🇸🇬狮城TAG, 🇯🇵日本TAG, 🏠家宽高倍, 📌手动]}
 #  - {name: 🎙️GoogleVoice,type: select, proxies: [🇺🇸美国prpr, 🇺🇸美国TAG, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
-  - {name: ✈️Telegram,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
+  - {name: ✈️Telegram,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇭🇰香港CNIX, 📌手动]}
   - {name: 📞WhatsApp,type: select, proxies: [🎥流媒体代理, 🚀默认代理, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 📌手动]}
   - {name: 💎TIDAL,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
   - {name: 🎵Qobuz,type: select, proxies: [🇦🇷阿根廷, 🇳🇬自建尼日, ♻️nano, 🦥懒人, 🇳🇬尼日利亚, 🚀默认代理, 🇺🇸美国prpr, 🇺🇸美国TAG, DIRECT]}
